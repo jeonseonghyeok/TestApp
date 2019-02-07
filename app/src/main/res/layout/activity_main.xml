@@ -8,17 +8,97 @@
 
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="90dp"
+        android:layout_weight="1.2"
+        android:background="#FFF"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tab_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_selector"
+            android:gravity="center"
+            android:text="@string/list"
+            android:textColor="@drawable/tab_color_selector"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tab_map"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg_selector"
+            android:gravity="center"
+            android:text="@string/map"
+            android:textColor="@drawable/tab_color_selector"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tab_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-5dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_room" />
+
+        <TextView
+            android:id="@+id/tab_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_ofiice" />
+
+        <TextView
+            android:id="@+id/tab_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-5dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_no_dep" />
+
+        <TextView
+            android:id="@+id/tab_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-15dp"
+            android:layout_weight=".3"
+            android:background="@drawable/tab_etc" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:background="#ccc"
+        android:layout_height="90dp"
+        android:background="@drawable/search_background"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@drawable/title_icon" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="57dp"
+                android:layout_marginLeft="-35dp"
+                android:layout_marginTop="-3dp"
+                app:srcCompat="@drawable/title_logo" />
 
             <TextView
                 android:id="@+id/gps"
@@ -27,28 +107,26 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/pos"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <AutoCompleteTextView
                 android:id="@+id/gpsSearch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/gpsSearchButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/bt_gps" />
+                android:textSize="18sp"
+                android:visibility="gone" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal">
+            android:layout_weight="2.7"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/textView5"
@@ -57,67 +135,61 @@
                 android:layout_weight="0.3"
                 android:gravity="center"
                 android:text="@string/tag"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <AutoCompleteTextView
                 android:id="@+id/tagSearch"
-                android:layout_width="0dp"
+                android:layout_width="300dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:background="#FFF"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:textSize="18sp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-
-            android:layout_weight="1.2"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tab_list"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/tab_bg_selector"
-                android:gravity="center"
-                android:text="@string/list"
-                android:textColor="@drawable/tab_color_selector" />
-
-            <TextView
-                android:id="@+id/tab_map"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/tab_bg_selector"
-                android:gravity="center"
-                android:text="@string/map"
-                android:textColor="@drawable/tab_color_selector" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_icon" />
 
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="110dp">
+        android:layout_marginTop="130dp">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp"
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp" />
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/gpsSearchButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gps_icon" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp" />
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -252,18 +324,16 @@
             android:paddingTop="10dp"
             android:paddingRight="20dp"
             android:paddingBottom="20dp"
+            android:visibility="gone"
             app:srcCompat="@drawable/markup" />
 
         <ImageButton
             android:id="@+id/bt_STRestaurant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="#00000000"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="20dp"
-            app:srcCompat="@drawable/shop" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/barloadbutton_icon" />
 
     </LinearLayout>
 

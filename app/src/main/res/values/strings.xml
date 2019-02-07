@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">appMaker</string>
+    <string name="app_name">OPC_demo</string>
     <string name="title_activity_maps">Map</string>
     <string name="pos">위치</string>
     <string name="tag">태그</string>
