@@ -111,7 +111,7 @@
                 android:visibility="gone" />
 
             <AutoCompleteTextView
-                android:id="@+id/gpsSearch"
+                android:id="@+id/tagSearch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -139,7 +139,7 @@
                 android:visibility="gone" />
 
             <AutoCompleteTextView
-                android:id="@+id/tagSearch"
+                android:id="@+id/gpsSearch"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"

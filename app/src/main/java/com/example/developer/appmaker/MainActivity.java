@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements GPSFinderFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
-        userKakaoIdCode=intent.getExtras().getLong("userKakaoIdCode")+"";
+      //  Intent intent = getIntent();
+       // userKakaoIdCode=intent.getExtras().getLong("userKakaoIdCode")+"";
         backPressCloseHandler = new BackPressCloseHandler(this);
         gpsSearch = (AutoCompleteTextView) findViewById(R.id.gpsSearch);
         tagSearch = (AutoCompleteTextView) findViewById(R.id.tagSearch);

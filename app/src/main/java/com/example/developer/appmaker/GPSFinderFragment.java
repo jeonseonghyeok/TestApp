@@ -132,7 +132,7 @@ public class GPSFinderFragment extends Fragment implements OnMapReadyCallback {
         mMap.setMinZoomPreference(13f);
         //final Marker[] m= new Marker[1];
         gpsPosition = new LatLng(extra.getDouble("GPSLat"), extra.getDouble("GPSLng"));
-        position=mMap.addMarker(new MarkerOptions().position(gpsPosition).icon(BitmapDescriptorFactory.fromResource(R.drawable.android)));
+        //position=mMap.addMarker(new MarkerOptions().position(gpsPosition).icon(BitmapDescriptorFactory.fromResource(R.drawable.android)));
         searchResult();
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(gpsPosition, (float) extra.getDouble("csize")));
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -164,6 +164,21 @@ public class GPSFinderFragment extends Fragment implements OnMapReadyCallback {
      *검색결과를 지도에 뿌려주는 메소드;
      */
     private  void searchResult(){
+        int size = 4;//검색된 수 만큼 좌표와 정보가져오기
+        m= new Marker[size];
+            m[0]=mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(gpsPosition.latitude+0.004,gpsPosition.longitude-0.003))
+                    .icon(BitmapDescriptorFactory.fromBitmap((Bitmap)Bitmap.createScaledBitmap(((BitmapDrawable)getResources().getDrawable(R.drawable.p13)).getBitmap(),200,200,false))));
+        m[1]=mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(gpsPosition.latitude+0.003,gpsPosition.longitude+0.0055))
+                .icon(BitmapDescriptorFactory.fromBitmap((Bitmap)Bitmap.createScaledBitmap(((BitmapDrawable)getResources().getDrawable(R.drawable.p15)).getBitmap(),200,200,false))));
+        m[2]=mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(gpsPosition.latitude-0.0075,gpsPosition.longitude-0.0055))
+                .icon(BitmapDescriptorFactory.fromBitmap((Bitmap)Bitmap.createScaledBitmap(((BitmapDrawable)getResources().getDrawable(R.drawable.p17)).getBitmap(),200,200,false))));
+        m[3]=mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(gpsPosition.latitude-0.001,gpsPosition.longitude-0.001))
+                .icon(BitmapDescriptorFactory.fromBitmap((Bitmap)Bitmap.createScaledBitmap(((BitmapDrawable)getResources().getDrawable(R.drawable.p20)).getBitmap(),200,200,false))));
+        /*
         int size = extra.getInt("size");//검색된 수 만큼 좌표와 정보가져오기
         //stores=new StoreInfo[size];
         m= new Marker[size];
@@ -176,7 +191,7 @@ public class GPSFinderFragment extends Fragment implements OnMapReadyCallback {
                     .snippet("평점 "+extra.getFloat("g"+i))
                     .icon(getMarker(extra.getFloat("g"+i))));
                     //.icon(BitmapDescriptorFactory.defaultMarker(15*(5-extra.getFloat("g"+i)))));
-        }
+        }*/
     }
 //수정시 https://stackoverflow.com/questions/14851641/change-marker-size-in-google-maps-api-v2 참고
 //기본마커
@@ -205,6 +220,7 @@ public class GPSFinderFragment extends Fragment implements OnMapReadyCallback {
         Bitmap b=bitmapdraw.getBitmap();
         Bitmap BigMarker = Bitmap.createScaledBitmap(b, markerSize, markerSize, false);
         return  BitmapDescriptorFactory.fromBitmap((Bitmap) BigMarker);
+
     }
     /**
      * 현재 맵의 좌표를 이동시켜주는 메소드
